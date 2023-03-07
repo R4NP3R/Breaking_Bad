@@ -1,0 +1,103 @@
+@use 'variaveis';
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;        
+    background-image: url(../../dist/images/BREAKINGBAD_BG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;   
+    box-shadow: 5px 10px 8px black;
+    &__items {
+        display: flex;
+        flex-direction: column;
+        &__logo{
+            width: 20vw;
+            margin: 2vw;
+            margin-bottom: 30vw;
+            animation: InitialLogo 2s backwards;
+            animation-delay: 0;            
+        }
+
+        &__button{
+            margin-left: 2vw;
+            animation: buttons 2s backwards;
+            animation-delay: 0;
+        }
+    }
+    &__episodes{
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        h2 {
+            margin: 2vw 6vw;
+            margin-bottom: 0;
+            color: variaveis.$CorPrincipal;
+            animation: text-appearing 1s backwards;
+            animation-delay: 1.2s;
+        }
+        &__item{
+            animation: episodes 3s ease;
+            animation-delay: .2s;
+
+            
+            img {
+                width: 280px;
+                margin: 2vw 3.5vw;
+                border: 1px solid variaveis.$CorPrincipal;
+            }            
+
+        }       
+        }
+    }
+
+
+
+@keyframes InitialLogo{
+    from {
+        transform: translateX(-500px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes buttons{
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes episodes{
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-appearing{
+    0% {
+        opacity: 0;
+    }
+    
+    100%{
+        opacity: 1;
+    }
+}

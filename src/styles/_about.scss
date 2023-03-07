@@ -1,0 +1,60 @@
+@use 'variaveis';
+
+
+.about__characters{
+    background-image: url(../../dist/images/ABOUT_BG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 24px;
+    .container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    h2 {
+        color: #fff;
+        font-size: 48px;
+        text-align: center;
+        -webkit-text-stroke: 2px variaveis.$CorPrincipal;
+        padding: 36px 0 0;
+    }
+    
+    &__bio {
+        display: flex;
+        margin-top: 48px;
+        background-color: rgba(62, 205, 248, 0.2);
+        box-shadow: 1px 1px 15px black;        
+
+        &__image{
+            width: 230px;
+            transition: .2s;            
+        }
+
+        &__text {
+            margin-left: 24px;
+            color: variaveis.$CorPrincipal;
+            
+            h3 {
+                font-size: 24px;
+                font-weight: bold;
+                margin: 12px 0px;
+            }
+            p {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+// animations
+
+[data-anime]{
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: 1.5s;
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translateX(0);
+}

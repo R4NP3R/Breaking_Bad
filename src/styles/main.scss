@@ -1,0 +1,70 @@
+@use 'variaveis';
+@use 'hero';
+@use 'about';
+
+
+@mixin tittle($fontsize: 48px) {
+    color: #fff;
+    font-size: $fontsize;    
+    -webkit-text-stroke: 1.4px variaveis.$CorPrincipal;
+}
+
+@mixin text($fontsize: 24px) {
+    color: #fff;
+    font-size: $fontsize;    
+    -webkit-text-stroke: 1px variaveis.$CorPrincipal;
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
+body {
+    background-color: black;
+    border: 2px red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Avenir, sans-serif ;
+}
+
+.button {
+    font-size: 24px;
+    background-color: transparent;
+    font-weight: bold;
+    color: variaveis.$CorPrincipal;
+    text-decoration: none;
+    padding: 12px 22px;
+    text-transform: uppercase;
+    border: 1px solid variaveis.$CorPrincipal;
+    cursor: pointer;
+    letter-spacing: 1px;
+    &:hover{
+        background-color:variaveis.$CorPrincipal;   
+        color: white;
+        border: 1px solid white;
+    }
+}
+
+.tittle{
+    @include tittle;
+}
+
+.tittle-small{
+    @include tittle(36px);
+}
+
+.text{
+    @include text;
+}
